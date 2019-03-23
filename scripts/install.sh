@@ -9,9 +9,7 @@ source "$(dirname "$0")"/../scripts/resources.sh
 is_pull_request "$0"
 
 echo "Install Bluemix CLI"
-curl -L https://public.dhe.ibm.com/cloud/bluemix/cli/bluemix-cli/latest/IBM_Cloud_CLI_amd64.tar.gz > Bluemix_CLI.tar.gz
-tar -xvf Bluemix_CLI.tar.gz
-sudo ./Bluemix_CLI/install_bluemix_cli
+curl -fsSL https://clis.ng.bluemix.net/install/linux | sh
 
 echo "Install kubectl"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/"$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)"/bin/linux/amd64/kubectl
