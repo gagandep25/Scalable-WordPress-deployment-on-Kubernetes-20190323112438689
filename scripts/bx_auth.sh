@@ -15,7 +15,7 @@ BLUEMIX_SPACE="dev"
 is_pull_request "$0"
 
 echo "Authenticating to Bluemix"
-bx login -a https://api.ng.bluemix.net
+bx login 
 
 echo "Targeting Bluemix org and space"
 bx target -o "$BLUEMIX_ORG" -s "$BLUEMIX_SPACE"
