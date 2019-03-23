@@ -15,7 +15,7 @@ fi
 
 echo "Deploy pods"
 
-echo "bx login -a $CF_TARGET_URL"
+echo "bx login -a https://api.ng.bluemix.net"
 
 if [ -z "$API_KEY" ]; then
   if ! bx login -a "$CF_TARGET_URL" -u "$BLUEMIX_USER" -p "$BLUEMIX_PASSWORD" -c "$BLUEMIX_ACCOUNT" -o "$CF_ORG" -s "$CF_SPACE"; then
@@ -23,7 +23,7 @@ if [ -z "$API_KEY" ]; then
     exit 1
   fi
 else
-  if ! bx login -a "$CF_TARGET_URL" --apikey "$API_KEY" -o "$CF_ORG" -s "$CF_SPACE"; then
+  if ! bx login -a https://api.ng.bluemix.net --apikey "$API_KEY" -o "$CF_ORG" -s "$CF_SPACE"; then
     echo "Failed to authenticate to Bluemix"
     exit 1
   fi
